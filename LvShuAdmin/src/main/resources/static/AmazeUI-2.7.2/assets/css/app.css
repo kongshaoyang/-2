@@ -1,0 +1,66 @@
+/********** 登录 ***********/
+.account-pages {
+    height: 100%;
+    width: 100%;
+    background:url(/AmazeUI-2.7.2/assets/i/loginbg.jpg) center !important;
+    background-size: cover;
+}
+
+.btnpad{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px;
+}
+
+.imgpad{
+    padding-left: 200px;
+}
+
+.card-box {
+  padding: 20px;
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  background-clip: padding-box;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+.card-box .card-drop {
+  color: #98a6ad;
+  font-size: 20px;
+  line-height: 1px;
+  padding: 0px 5px;
+  display: inline-block;
+}
+
+.m-t-40 {
+  margin-top: 40px !important;
+}
+
+.tjlanmu .registerZuo{width: 20%;text-align: right;margin-right: 1%;float: left;line-height: 33px;}
+.tjlanmu .registerYou{width: 60%;float: left;}
+
+.main_btn_bs:hover{
+	color: #ff6c60;
+}
+
+.am-popup{left: 200px;}
+.am-tabs-bd .am-tab-panel{padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;}
+    
+/********** 内容高度设置，增加滚动条 ***********/
+.admin{
+	height: 95%;
+	overflow: auto;
+}
+.admin-biaogelist{
+	height: 95%;
+	overflow: auto;
+}
+.am-g{
+    padding-left: 20px;
+    padding-top: 20px;
+}

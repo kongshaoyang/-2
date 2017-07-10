@@ -1,0 +1,79 @@
+package com.lvshu.controller;
+
+import com.lvshu.model.Comment;
+import com.lvshu.model.Head;
+import com.lvshu.service.CommentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Created by 田原 on 2016/12/22.
+ */
+@Controller
+@RequestMapping("/comment")
+public class CommentController {
+    @Autowired
+    private CommentService commentService;
+
+    Map<String, Object> map = Collections.synchronizedMap(new HashMap<String, Object>());
+
+    @RequestMapping(value = "/publishComment", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> publishComment(Head head, Comment comment) {
+        try {
+            commentService.addComment(comment);
+            head.setRetCode("00");
+            head.setRetDesc("SUCCESS");
+        } catch (Exception e) {
+            head.setRetCode("01");
+            head.setRetDesc("FAILED");
+            e.printStackTrace();
+        }
+        map.put("Head", head);
+        return map;
+    }
+
+    @RequestMapping(value = "/getCommentDetails", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> getCommentDetails(Head head, @RequestParam(value="commentNum", required=false) String commentNum) {
+        try {
+            Comment comment = commentService.getComment(commentNum);
+            head.setRetCode("00");
+            head.setRetDesc("SUCCESS");
+            map.put("Comment", comment);
+        } catch (Exception e) {
+            head.setRetCode("01");
+            head.setRetDesc("FAILED");
+            e.printStackTrace();
+        }
+        map.put("Head", head);
+        return map;
+    }
+
+    @RequestMapping(value = "/getMyCommentList", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> getMyCommentList(Head head, @RequestParam(value="userNum", required=false) String userNum) {
+        try {
+            List<Comment> list = commentService.getCommentByUserNum(userNum);
+            head.setRetCode("00");
+            head.setRetDesc("SUCCESS");
+            map.put("Comment", list);
+        } catch (Exception e) {
+            head.setRetCode("01");
+            head.setRetDesc("FAILED");
+            e.printStackTrace();
+        }
+        map.put("Head", head);
+        return map;
+    }
+
+}

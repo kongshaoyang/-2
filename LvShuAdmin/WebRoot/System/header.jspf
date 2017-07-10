@@ -1,0 +1,17 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>南京百一自联绿书综合管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<link rel="stylesheet" href="/AmazeUI-2.7.2/assets/css/amazeui.min.css"/>
+<link rel="stylesheet" href="/AmazeUI-2.7.2/assets/css/admin.css">
+<link rel="stylesheet" href="/AmazeUI-2.7.2/assets/css/app.css">
+<link rel="stylesheet" href="/AmazeUI-2.7.2/assets/css/echarts.css">
+
+<script src="/AmazeUI-2.7.2/assets/js/jquery.min.js"></script>
+<script src="/AmazeUI-2.7.2/assets/js/app.js"></script>
+<script src="/AmazeUI-2.7.2/assets/js/amazeui.min.js"></script>
+<script src="/AmazeUI-2.7.2/assets/js/echarts.min.js"></script>
+
